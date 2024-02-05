@@ -1,8 +1,8 @@
 export default {
-    input:'./index.js',
+    input:'./src/index.js',
     output:[
         {
-            file:'./dist/index.js',
+            file:'./dist/index.cjs',
             format:'cjs'
         },
         {

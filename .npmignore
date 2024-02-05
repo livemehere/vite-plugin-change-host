@@ -1,3 +1,8 @@
 .idea
 node_modules
 .gitignore
+
+index.js
+host.js
+vite-plugin-change-host.js
+yarn.lock

@@ -1,10 +1,9 @@
-import { writeHost } from './host';
+import { writeHost } from './host.js';
+import type { Plugin } from 'vite';
 
-/**
- * @type{import('vite').Plugin}
- * @param {string|{host:string, additionalHosts:string[]}} options
- * */
-function changeHost(options) {
+type Options = string | { host: string; additionalHosts: string[] };
+
+function changeHost(options:Options):Plugin {
     const host = typeof options === 'string' ? options : options.host;
     const additionalHosts = typeof options === 'string' ? [] : options.additionalHosts || [];
     return {

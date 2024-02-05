@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-change-host",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "livemehere",
   "type": "module",
   "keywords": [
@@ -12,16 +12,21 @@
   ],
   "description": "A vite plugin to change the local host to a custom host",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     "require": "./dist/index.cjs",
     "import": "./dist/index.mjs"
   },
   "scripts": {
-    "publish": "npm publish"
+    "publish": "npm publish",
+    "build": "npx rollup -c"
   },
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.11.16",
     "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "typescript": "^5.3.3",
     "vite": "^5.0.12"
   }
 }

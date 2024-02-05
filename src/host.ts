@@ -2,16 +2,16 @@ import fs from 'fs';
 import os from 'os';
 
 const HOST_FILE_PATH = os.platform() === 'win32' ? 'C:\\Windows\\System32\\drivers\\etc\\hosts' : '/etc/hosts';
-let _hosts = [];
+let _hosts:string[] = [];
 function getHostFileText() {
     return fs.readFileSync(HOST_FILE_PATH, 'utf8');
 }
 
-function getNotExistHosts(matches, hosts) {
+function getNotExistHosts(matches:string[]|null, hosts:string[]) {
     if (!matches) {
         return hosts;
     }
-    const result = [];
+    const result:string[] = [];
     hosts.forEach((host) => {
         if (!matches.some((match) => match.includes(host))) {
             result.push(host);
@@ -20,10 +20,7 @@ function getNotExistHosts(matches, hosts) {
     return result;
 }
 
-/**
- * @param hosts{string[]}
- */
-function writeHost(hosts) {
+function writeHost(hosts:string[]) {
     _hosts = hosts;
     const text = getHostFileText();
     const HOST_REGEX = /\n(127\.0\.0\.1\s+(.+))/g;

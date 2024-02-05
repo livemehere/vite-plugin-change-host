@@ -33,8 +33,8 @@ yarn add vite-plugin-change-host
 export default defineConfig({
     plugins: [
         changeHost({
-            host: 'home.exmaple.com',
-            additionalHosts: ['example.com', 'api.example.com'],
+            host: 'home.exmaple.com', // set dev server host
+            additionalHosts: ['example.com', 'api.example.com'], // additional hosts
         }),
     ],
 })
@@ -47,3 +47,7 @@ process.on('SIGINT', () => {
     process.exit();
 });
 ```
+
+## Note
+
+- Host changes when command `vite` , `vite preview` is executed.(not `build`)

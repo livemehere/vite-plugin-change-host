@@ -1,13 +1,14 @@
-import {dts} from "rollup-plugin-dts";
+import typescript from "@rollup/plugin-typescript";
 
-export default {
+/**
+ * @type {import('rollup').RollupOptions}
+ */
+const config = {
     input:'./src/index.ts',
-    plugins:[dts()],
+    plugins:[
+        typescript()
+    ],
     output:[
-        {
-            file:'./dist/index.d.ts',
-            format:'es'
-        },
         {
             file:'./dist/index.cjs',
             format:'cjs'
@@ -16,6 +17,8 @@ export default {
             file:'./dist/index.mjs',
             format:'es'
         }
-    ]
+    ],
 
 }
+
+export default config

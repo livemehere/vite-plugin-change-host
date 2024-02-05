@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-change-host",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "livemehere",
   "type": "module",
   "keywords": [
@@ -23,9 +23,10 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.6",
     "@types/node": "^20.11.16",
     "rollup": "^4.9.6",
-    "rollup-plugin-dts": "^6.1.0",
+    "tslib": "^2.6.2",
     "typescript": "^5.3.3",
     "vite": "^5.0.12"
   }

@@ -21,7 +21,7 @@ function changeHost(options:Options):Plugin {
             _config = config;
         },
         buildStart() {
-            if(_config.mode !== 'development') return;
+            if(_config.command !== 'serve') return;
             writeHost([host, ...additionalHosts]);
         },
     };

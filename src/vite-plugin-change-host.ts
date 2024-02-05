@@ -20,6 +20,9 @@ function changeHost(options:Options):Plugin {
         configResolved(config){
             _config = config;
         },
+        configurePreviewServer(){
+            writeHost([host, ...additionalHosts]);
+        },
         buildStart() {
             if(_config.command !== 'serve') return;
             writeHost([host, ...additionalHosts]);

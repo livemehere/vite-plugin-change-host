@@ -35,6 +35,7 @@ export default defineConfig({
         changeHost({
             host: 'home.exmaple.com', // set dev server host
             additionalHosts: ['example.com', 'api.example.com'], // additional hosts
+            customPath:'C:\\Windows\\System32\\drivers\\etc\\hosts' // if you use wsl in Windows, might be needed.
         }),
     ],
 })
